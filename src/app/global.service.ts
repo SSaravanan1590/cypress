@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class GlobalService {
     public headerTitlePage : string = "";
+    public pageTitle : string = '';
+    
     constructor() {}
 
     getMessage(): string {

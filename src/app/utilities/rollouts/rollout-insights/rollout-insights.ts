@@ -10,6 +10,8 @@ import { GlobalService } from '../../../global.service';
 })
 export class RolloutInsights {
   constructor(public globalService: GlobalService) {
-    this.globalService.headerTitlePage = 'Rollout Insights';
+    setTimeout(() => {
+      this.globalService.headerTitlePage = 'Rollout Insights';
+    }, 100);
   }
 }

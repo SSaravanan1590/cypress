@@ -9,6 +9,8 @@ import { GlobalService } from '../../../global.service';
 })
 export class TriggerJobs {
   constructor(public globalService: GlobalService) {
-    this.globalService.headerTitlePage = 'Trigger Jobs';
+    setTimeout(() => {
+      this.globalService.headerTitlePage = 'Trigger Jobs';
+    }, 100);
   }
 } 

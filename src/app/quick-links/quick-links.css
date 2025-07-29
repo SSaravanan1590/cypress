@@ -1,0 +1,10 @@
+.page-body-wrapper {
+    padding-top: 70px;
+} 
+a {
+    text-decoration: none;
+}
+.nav-link.active {
+  color: #38ce3c !important;
+  font-weight: bold;
+}

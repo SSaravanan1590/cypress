@@ -8,6 +8,8 @@ import { GlobalService } from '../../../global.service';
 })
 export class NavigationCheck {
   constructor(public globalService: GlobalService) {
-    this.globalService.headerTitlePage = 'Navigation Check';
+    setTimeout(() => {
+      this.globalService.headerTitlePage = 'Navigation Check';
+    }, 100);
   }
 }

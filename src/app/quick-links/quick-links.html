@@ -1,18 +1,30 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
-    <ul class="nav">
-      <li class="nav-item navbar-brand-mini-wrapper">
-        <a class="nav-link navbar-brand brand-logo-mini" href=""><img style="height: 15px;" src="/assets/images/favicon.ico" alt="logo" /></a>
-      </li>
-        <ng-container *ngFor="let section of quickLinks">
-            <li class="nav-item nav-category">
-            <span class="nav-link">{{ section.Category }} <br> {{ section.CategoryBreak }}</span>
-            </li>
-            <li class="nav-item" *ngFor="let item of section.SubCategory" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-                <a class="nav-link" [routerLink]="item.path">
-                    <span class="menu-title">{{ item.Title }}</span>
-                    <i [class]="item.Icon + ' menu-icon'"></i>
+  <ul class="nav">
+    <li class="nav-item navbar-brand-mini-wrapper">
+      <a class="nav-link navbar-brand brand-logo-mini" href="">
+        <img style="height: 15px;" src="/assets/images/favicon.ico" alt="logo" />
+      </a>
+    </li>
+    <ul class="nav flex-column">
+        <li *ngFor="let section of quickLinks; let i = index" class="nav-item">
+            <a href="javascript:void(0);" class="nav-link"
+            (click)="toggleMenu(i)" [class.active]="activeIndex === i">
+            <span>{{ section.Category }}
+            <span *ngIf="section.CategoryBreak"> <br/>{{ section.CategoryBreak }}</span></span>
+            </a>
+            <ul *ngIf="activeIndex === i" class="nav flex-column sub-menu">
+            <li class="nav-item"
+                *ngFor="let item of section.SubCategory"
+                [class.active]="selectedPath === item.path">
+                <a class="nav-link"
+                [routerLink]="item.path"
+                (click)="setSelectedPath(item.path)">
+                <span class="menu-title">{{ item.Title }}</span>
+                <i [class]="item.Icon + ' menu-icon'"></i>
                 </a>
             </li>
-        </ng-container>
-    </ul>
-  </nav>
+            </ul>
+        </li>
+        </ul>
+  </ul>
+</nav>

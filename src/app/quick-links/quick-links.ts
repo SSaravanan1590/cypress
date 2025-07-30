@@ -1,14 +1,16 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { RemoveSpecialCharsPipe } from '../pipes/remove-special-chars-pipe';
 
 @Component({
   selector: 'app-quick-links',
   standalone: true,
   templateUrl: './quick-links.html',
   styleUrl: './quick-links.css',
-  imports: [CommonModule,RouterModule],
-  encapsulation: ViewEncapsulation.None 
+  imports: [CommonModule, RouterModule, RemoveSpecialCharsPipe],
+  encapsulation: ViewEncapsulation.None
 })
 export class QuickLinks {
   quickLinks = [
@@ -35,8 +37,37 @@ export class QuickLinks {
       SubCategory: [
         { Title: 'Trigger Jobs', Icon: 'icon-user', path: '/batsuite/trigger-jobs' },
         { Title: 'Job Status', Icon: 'icon-settings', path: '/batsuite/job-status' },
-        { Title: 'Consolidate Report', Icon: 'icon-settings', path: '/batsuite/consolidate-report' }
+        { Title: 'Consolidated Report', Icon: 'icon-settings', path: '/batsuite/consolidate-report' }
       ]
     }
   ];
+
+  activeIndex: number | null = null;
+  selectedPath: string = '';
+
+  constructor(private router: Router) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.selectedPath = event.urlAfterRedirects;
+        this.setActiveIndexByPath(this.selectedPath);
+      }
+    });
+  }
+
+  toggleMenu(index: number) {
+    this.activeIndex = this.activeIndex === index ? null : index;
+  }
+
+  setActiveIndexByPath(path: string) {
+    this.quickLinks.forEach((section, index) => {
+      const match = section.SubCategory.find(item => item.path === path);
+      if (match) {
+        this.activeIndex = index;
+      }
+    });
+  }
+
+  setSelectedPath(path: string) {
+    this.selectedPath = path;
+  }
 }

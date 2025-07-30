@@ -1,1 +1,11 @@
-<p>layouts works!</p>
+<section class="content">
+    <h2 class="title">
+        <span class="line"></span>Exterro Cypress QA<span class="line"></span>
+    </h2>
+    <div class="card-container">
+        <div class="card" *ngFor="let section of quickLinks">
+            <h3>{{ section.Category }} <span *ngIf="section.CategoryBreak">/ {{ section.CategoryBreak }}</span></h3>      
+            <p *ngFor="let item of section.SubCategory" (click)="navigateTo(item.path)" class="clickable">{{ item.Title }}</p>
+        </div>
+    </div>
+</section>

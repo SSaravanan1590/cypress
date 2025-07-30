@@ -9,6 +9,8 @@ import { GlobalService } from '../../../global.service';
 })
 export class RegressionTracker {
 constructor(public globalService: GlobalService) {
-    this.globalService.headerTitlePage = 'Regression Tracker';
+  setTimeout(() => {
+    this.globalService.headerTitlePage = 'Regression Tracker';    
+  }, 100);
   }
 }

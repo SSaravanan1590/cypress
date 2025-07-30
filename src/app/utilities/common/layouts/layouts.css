@@ -1,0 +1,75 @@
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    height: 30px;
+}
+
+.profile-circle {
+    background-color: #c19b89;
+    color: white;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+.content {
+    padding: 2rem;
+    text-align: center;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0b1936;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: #ccc;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #f9f9f9;
+    padding: 0;
+    width: 250px;
+    /* border-radius: 8px; */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.card h3 {
+    background: #f36e39;
+    font-size: 14px;
+    padding: 7px;
+    color: #fff;
+    margin: 0;
+}
+.card p:last-child {
+    /* margin-bottom: 5px; */
+    border-bottom: initial;
+}
+.card p {
+    cursor: pointer;
+    font-size: 12px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 0;
+    padding: 5px;
+}

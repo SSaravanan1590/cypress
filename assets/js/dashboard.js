@@ -100,10 +100,10 @@
               data: [55,25,20],
               backgroundColor: [
                 '#ffca00',
-                '#38ce3c',
+                '#f36e39',
                 '#ff4d6b'
               ],
-              borderColor: ['#ffca00','#38ce3c','#ff4d6b']
+              borderColor: ['#ffca00','#f36e39','#ff4d6b']
           }]
         },
         options: {

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { GlobalService } from '../../../global.service';
-
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [CommonModule],
   standalone: true,
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'

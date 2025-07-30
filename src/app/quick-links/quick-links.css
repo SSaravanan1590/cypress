@@ -11,3 +11,14 @@ a {
 .sidebar .nav {
     margin-bottom: 0;
 }
+.sidebar .nav.sub-menu .nav-item .nav-link {
+    padding-right: 0;
+    padding-left: 20px;
+}
+.sidebar .nav .nav-item.active:not(.navbar-brand-mini-wrapper) > .nav-link .menu-title {
+    color: #38ce3c;
+    font-weight: 900;
+}
+.sidebar .nav.sub-menu .nav-item {
+    cursor: pointer;
+}

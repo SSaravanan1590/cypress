@@ -9,7 +9,7 @@ import { RemoveSpecialCharsPipe } from '../pipes/remove-special-chars-pipe';
   standalone: true,
   templateUrl: './quick-links.html',
   styleUrl: './quick-links.css',
-  imports: [CommonModule, RouterModule, RemoveSpecialCharsPipe],
+  imports: [CommonModule, RouterModule],
   encapsulation: ViewEncapsulation.None
 })
 export class QuickLinks {
@@ -37,7 +37,7 @@ export class QuickLinks {
       SubCategory: [
         { Title: 'Trigger Jobs', Icon: 'icon-user', path: '/batsuite/trigger-jobs' },
         { Title: 'Job Status', Icon: 'icon-settings', path: '/batsuite/job-status' },
-        { Title: 'Consolidated Report', Icon: 'icon-settings', path: '/batsuite/consolidate-report' }
+        { Title: 'Consolidated Report', Icon: 'icon-settings', path: '/batsuite/consolidated-report' }
       ]
     }
   ];

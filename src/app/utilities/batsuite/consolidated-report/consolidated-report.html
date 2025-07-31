@@ -1,1 +1,24 @@
-<p>consolidated-report works!</p>
+<!-- rollout-insights.html -->
+<kendo-grid
+  [data]="gridView"
+  [pageSize]="state.take"
+  [skip]="state.skip"
+  [sortable]="true"
+  [pageable]="true"
+  [filterable]="true"
+  [groupable]="false"
+  (dataStateChange)="dataStateChange($event)"
+  (pageChange)="pageChange($event)"
+>
+  <kendo-grid-column field="id" title="ID" [width]="70"></kendo-grid-column>
+  <kendo-grid-column field="build_number" title="Build #" filter="text"></kendo-grid-column>
+  <kendo-grid-column field="job_name" title="Job Name" filter="text"></kendo-grid-column>
+  <kendo-grid-column field="tenant_id" title="Tenant ID" filter="text"></kendo-grid-column>
+  <kendo-grid-column field="environment" title="Environment" filter="text"></kendo-grid-column>
+  <kendo-grid-column field="job_status" title="Status" filter="text"></kendo-grid-column>
+  <kendo-grid-column field="job_type" title="Type" filter="text"></kendo-grid-column>
+  <kendo-grid-column field="module" title="Module" filter="text"></kendo-grid-column>
+  <kendo-grid-column field="executed_by" title="Executed By" filter="text"></kendo-grid-column>
+  <kendo-grid-column field="executed_on" title="Executed On" [width]="200" filter="date" format="{0:yyyy-MM-dd HH:mm}"></kendo-grid-column>
+  <kendo-grid-column field="sprint_version" title="Sprint" filter="text"></kendo-grid-column>
+</kendo-grid>

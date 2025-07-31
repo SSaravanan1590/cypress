@@ -1,1 +1,8 @@
-<p>rollout-insights works!</p>
+
+<div *ngIf="loading">Loading folders...</div>
+<div *ngIf="error">{{ error }}</div>
+<ul *ngIf="!loading && folders.length > 0">
+  <ng-container *ngFor="let folder of folders">
+    <app-folder-lists [node]="folder"></app-folder-lists>
+  </ng-container>
+</ul>

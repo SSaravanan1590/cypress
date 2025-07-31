@@ -12,11 +12,12 @@ import { NavigationCheck } from './utilities/rollouts/navigation-check/navigatio
 import { TriggerJobs } from './utilities/batsuite/trigger-jobs/trigger-jobs';
 import { JobStatus } from './utilities/batsuite/job-status/job-status';
 import { ConsolidatedReport } from './utilities/batsuite/consolidated-report/consolidated-report';
-
+import { FolderLists } from './utilities/rollouts/folder-lists/folder-lists';
+import { GridModule } from '@progress/kendo-angular-grid';
 import { GlobalService } from './global.service';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, QuickLinks, Header, Footer,HomeWrapper,RolloutsWrapper,BatsuiteWrapper,RolloutInsights,RegressionTracker,NavigationCheck,TriggerJobs,JobStatus,ConsolidatedReport],
+  imports: [RouterOutlet, QuickLinks, Header, GridModule],
   templateUrl: './app.html',
   styleUrl: './app.css',
   encapsulation: ViewEncapsulation.None

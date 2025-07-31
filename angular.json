@@ -15,8 +15,10 @@
           "options": {
             "browser": "src/main.ts",
             "polyfills": [
-              "zone.js"
+              "zone.js",
+              "@angular/localize/init"
             ],
+            "index": "src/index.html",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -26,7 +28,11 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/@progress/kendo-theme-default/dist/all.css",
+                "src/styles.scss",
+                {
+                  "input": "node_modules/@progress/kendo-theme-default/scss/index.scss"
+                }
             ]
           },
           "configurations": {
@@ -51,7 +57,7 @@
               "sourceMap": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "production",
         },
         "serve": {
           "builder": "@angular/build:dev-server",
@@ -73,7 +79,8 @@
           "options": {
             "polyfills": [
               "zone.js",
-              "zone.js/testing"
+              "zone.js/testing",
+              "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
@@ -83,6 +90,9 @@
               }
             ],
             "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              },
               "src/styles.css"
             ]
           }

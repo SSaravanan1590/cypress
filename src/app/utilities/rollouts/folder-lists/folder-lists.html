@@ -1,0 +1,8 @@
+<li>
+  <strong>{{ node.name }}</strong>
+  <ul *ngIf="node.children && node.children.length > 0">
+    <ng-container *ngFor="let child of node.children">
+      <app-folder-lists [node]="child"></app-folder-lists>
+    </ng-container>
+  </ul>
+</li>

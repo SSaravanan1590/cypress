@@ -6,7 +6,8 @@ import { GlobalService } from '../../global.service';
   selector: 'app-batsuite-wrapper',
   imports: [RouterOutlet],
   templateUrl: './batsuite-wrapper.html',
-  styleUrl: './batsuite-wrapper.css'
+  styleUrl: './batsuite-wrapper.css',
+  standalone: true
 })
 export class BatsuiteWrapper {
   constructor(public globalService: GlobalService) {
